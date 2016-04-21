@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,9 +18,11 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Defining views
-    private EditText editTextName;
-    private EditText editTextDesg;
-    private EditText editTextSal;
+    private EditText editTextFirst_Name;
+    private EditText editTextLast_Name;
+    private EditText editTextBirth_date;
+    private EditText editTextPhone_Number;
+    private EditText editTextEmail;
 
     private Button buttonAdd;
     private Button buttonView;
@@ -30,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         //Initializing views
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextDesg = (EditText) findViewById(R.id.editTextDesg);
-        editTextSal = (EditText) findViewById(R.id.editTextSalary);
+        editTextFirst_Name = (EditText) findViewById(R.id.editTextFirst_Name);
+        editTextLast_Name = (EditText) findViewById(R.id.editTextLast_Name);
+        editTextBirth_date = (EditText) findViewById(R.id.editTextBirth_date);
+        editTextPhone_Number = (EditText) findViewById(R.id.editTextPhone_Number);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonView = (Button) findViewById(R.id.buttonView);
@@ -46,9 +51,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Adding an employee
     private void addEmployee(){
 
-        final String name = editTextName.getText().toString().trim();
-        final String desg = editTextDesg.getText().toString().trim();
-        final String sal = editTextSal.getText().toString().trim();
+        final String First_Name = editTextFirst_Name.getText().toString().trim();
+        final String Last_Name = editTextLast_Name.getText().toString().trim();
+        final String Birth_date = editTextBirth_date.getText().toString().trim();
+        final String Phone_Number = editTextPhone_Number.getText().toString().trim();
+        final String Email = editTextEmail.getText().toString().trim();
 
         class AddEmployee extends AsyncTask<Void,Void,String>{
 
@@ -70,9 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<>();
-                params.put(Config.KEY_EMP_NAME,name);
-                params.put(Config.KEY_EMP_DESG,desg);
-                params.put(Config.KEY_EMP_SAL,sal);
+                params.put(Config.KEY_First_Name,First_Name);
+                params.put(Config.KEY_Last_Name,Last_Name);
+                params.put(Config.KEY_Birth_date,Birth_date);
+                params.put(Config.KEY_Phone_Number,Phone_Number);
+                params.put(Config.KEY_Email,Email);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(Config.URL_ADD, params);
@@ -90,8 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             addEmployee();
         }
 
-        if(v == buttonView){
-            startActivity(new Intent(this,ViewAllTasks.class));
-        }
+        //if(v == buttonView){
+          //  startActivity(new Intent(this,ViewAllTasks.class));
+        //}
     }
 }

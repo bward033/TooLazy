@@ -3,7 +3,7 @@ package com.example.epiphanybox.toolazy;
 /**
  * Created by EpiphanyBox on 4/19/16.
  *
- */
+
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -25,7 +25,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+
 public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemClickListener {
+
 
         private ListView listView;
 
@@ -50,12 +53,17 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
                 for(int i = 0; i<result.length(); i++){
                     JSONObject jo = result.getJSONObject(i);
-                    String id = jo.getString(Config.TAG_ID);
-                    String name = jo.getString(Config.TAG_NAME);
+                    String First_Name = jo.getString(Config.TAG_First_Name);
+                    String Last_Name = jo.getString(Config.TAG_Last_Name);
+                    String Email = jo.getString(Config.TAG_Email);
+                    String Phone_Number = jo.getString(Config.TAG_Phone_Number);
+
 
                     HashMap<String,String> employees = new HashMap<>();
-                    employees.put(Config.TAG_ID,id);
-                    employees.put(Config.TAG_NAME,name);
+                    employees.put(Config.TAG_First_Name,First_Name);
+                    employees.put(Config.TAG_Last_Name,Last_Name);
+                    employees.put(Config.TAG_Email,Email);
+                    employees.put(Config.TAG_Phone_Number,Phone_Number);
                     list.add(employees);
                 }
 
@@ -65,8 +73,8 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
             ListAdapter adapter = new SimpleAdapter(
                     ViewAllTasks.this, list, R.layout.list_item,
-                    new String[]{Config.TAG_ID,Config.TAG_NAME},
-                    new int[]{R.id.id, R.id.name});
+                    new String[]{Config.TAG_First_Name,Config.TAG_Last_Name},
+                    new int[]{R.id.First_Name, R.id.Last_Name});
 
             listView.setAdapter(adapter);
         }
@@ -109,4 +117,4 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
             startActivity(intent);
         }
     }
-}
+ */

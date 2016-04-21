@@ -2,7 +2,7 @@ package com.example.epiphanybox.toolazy;
 
 /**
  * Created by EpiphanyBox on 4/19/16.
- */
+
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,10 +25,10 @@ import java.util.HashMap;
 
 public class ViewTask extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText editTextId;
-    private EditText editTextName;
-    private EditText editTextDesg;
-    private EditText editTextSalary;
+    private EditText editTextFirst_Name;
+    private EditText editTextLast_Name;
+    private EditText editTextEmail;
+    private EditText editTextPhone_Number;
 
     private Button buttonUpdate;
     private Button buttonDelete;
@@ -42,12 +42,12 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
 
         Intent intent = getIntent();
 
-        id = intent.getStringExtra(Config.EMP_ID);
+        id = intent.getStringExtra(Config.Account_ID);
 
-        editTextId = (EditText) findViewById(R.id.editTextId);
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextDesg = (EditText) findViewById(R.id.editTextDesg);
-        editTextSalary = (EditText) findViewById(R.id.editTextSalary);
+        editTextFirst_Name = (EditText) findViewById(R.id.editTextFirst_Name);
+        editTextLast_Name = (EditText) findViewById(R.id.editTextLast_Name);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextPhone_Number = (EditText) findViewById(R.id.editTextPhone_Number);
 
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
@@ -55,7 +55,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
 
-        editTextId.setText(id);
+        editTextFirst_Name.setText(id);
 
         getTask();
     }
@@ -211,3 +211,4 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
         }
     }
 }
+ */

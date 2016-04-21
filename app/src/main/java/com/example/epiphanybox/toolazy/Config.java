@@ -5,26 +5,23 @@ package com.example.epiphanybox.toolazy;
  */
 public class Config {
     //Address of our scripts of the CRUD
-    public static final String URL_ADD="http://www.cs370group.com/db-connect.php";
-    public static final String URL_GET_ALL = "http://192.168.94.1/Android/CRUD/getAllEmp.php";
-    public static final String URL_GET_EMP = "http://192.168.94.1/Android/CRUD/getEmp.php?id=";
-    public static final String URL_UPDATE_EMP = "http://192.168.94.1/Android/CRUD/updateEmp.php";
-    public static final String URL_DELETE_EMP = "http://192.168.94.1/Android/CRUD/deleteEmp.php?id=";
+    public static final String URL_ADD="http://cs370group.com/addAccounts.php";
+
 
     //Keys that will be used to send the request to php scripts
-    public static final String KEY_EMP_ID = "id";
-    public static final String KEY_EMP_NAME = "name";
-    public static final String KEY_EMP_DESG = "desg";
-    public static final String KEY_EMP_SAL = "salary";
-
+    public static final String KEY_First_Name = "First_Name";
+    public static final String KEY_Last_Name = "Last_Name";
+    public static final String KEY_Birth_date = "Birth_date";
+    public static final String KEY_Phone_Number = "Phone_Number";
+    public static final String KEY_Email = "Email";
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
-    public static final String TAG_ID = "id";
-    public static final String TAG_NAME = "name";
-    public static final String TAG_DESG = "desg";
-    public static final String TAG_SAL = "salary";
+    public static final String TAG_First_Name = "First_Name";
+    public static final String TAG_Last_Name = "Last_Name";
+    public static final String TAG_Email = "Email";
+    public static final String TAG_Phone_Number = "Phone_Number";
 
     //employee id to pass with intent
-    public static final String EMP_ID = "emp_id";
+    public static final String Account_ID = "Account_ID";
 }
 
