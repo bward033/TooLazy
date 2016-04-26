@@ -3,7 +3,7 @@ package com.example.epiphanybox.toolazy;
 /**
  * Created by EpiphanyBox on 4/19/16.
  *
-
+ */
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -74,7 +74,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
             ListAdapter adapter = new SimpleAdapter(
                     ViewAllTasks.this, list, R.layout.list_item,
                     new String[]{Config.TAG_First_Name,Config.TAG_Last_Name},
-                    new int[]{R.id.First_Name, R.id.Last_Name});
+                    new int[]{R.id.id});
 
             listView.setAdapter(adapter);
         }
@@ -100,7 +100,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
                 @Override
                 protected String doInBackground(Void... params) {
                     RequestHandler rh = new RequestHandler();
-                    String s = rh.sendGetRequest(Config.URL_GET_ALL);
+                    String s = rh.sendGetRequest(Config.URL_ALL_ACCOUNTS);
                     return s;
                 }
             }
@@ -112,9 +112,8 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent = new Intent(this, ViewTask.class);
             HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-            String empId = map.get(Config.TAG_ID).toString();
-            intent.putExtra(Config.EMP_ID,empId);
+            String Account_ID = map.get(Config.TAG_Account_ID).toString();
+            intent.putExtra(Config.Account_ID,Account_ID);
             startActivity(intent);
         }
     }
- */
