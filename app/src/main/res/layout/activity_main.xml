@@ -57,13 +57,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Employee"
+        android:text="Add Account"
         android:id="@+id/buttonAdd" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Employee"
+        android:text="View Accounts"
         android:id="@+id/buttonView" />
 
 </LinearLayout>

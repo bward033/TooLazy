@@ -2,7 +2,7 @@ package com.example.epiphanybox.toolazy;
 
 /**
  * Created by EpiphanyBox on 4/19/16.
-
+ */
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -79,7 +79,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_GET_EMP,id);
+                String s = rh.sendGetRequestParam(Config.URL_GET_ACCOUNT,id);
                 return s;
             }
         }
@@ -92,13 +92,15 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             JSONObject jsonObject = new JSONObject(json);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
-            String name = c.getString(Config.TAG_NAME);
-            String desg = c.getString(Config.TAG_DESG);
-            String sal = c.getString(Config.TAG_SAL);
+            String First_Name = c.getString(Config.TAG_First_Name);
+            String Last_Name = c.getString(Config.TAG_Last_Name);
+            String Phone_Number = c.getString(Config.TAG_Phone_Number);
+            String Email = c.getString(Config.TAG_Email);
 
-            editTextName.setText(name);
-            editTextDesg.setText(desg);
-            editTextSalary.setText(sal);
+            editTextFirst_Name.setText(First_Name);
+            editTextLast_Name.setText(Last_Name);
+            editTextPhone_Number.setText(Phone_Number);
+            editTextEmail.setText(Email);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -107,36 +109,36 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
 
 
     private void updateEmployee(){
-        final String name = editTextName.getText().toString().trim();
-        final String desg = editTextDesg.getText().toString().trim();
-        final String salary = editTextSalary.getText().toString().trim();
-
+        final String First_Name = editTextFirst_Name.getText().toString().trim();
+        final String Last_Name = editTextLast_Name.getText().toString().trim();
+        final String Phone_Number= editTextPhone_Number.getText().toString().trim();
+        final String Email = editTextEmail.getText().toString().trim();
         class UpdateEmployee extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ViewEmployee.this,"Updating...","Wait...",false,false);
+                loading = ProgressDialog.show(ViewTask.this,"Updating...","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ViewEmployee.this,s,Toast.LENGTH_LONG).show();
+                Toast.makeText(ViewTask.this,s,Toast.LENGTH_LONG).show();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put(Config.KEY_EMP_ID,id);
-                hashMap.put(Config.KEY_EMP_NAME,name);
-                hashMap.put(Config.KEY_EMP_DESG,desg);
-                hashMap.put(Config.KEY_EMP_SAL,salary);
+                hashMap.put(Config.KEY_First_Name,First_Name);
+                hashMap.put(Config.KEY_Last_Name,Last_Name);
+                hashMap.put(Config.KEY_Phone_Number,Phone_Number);
+                hashMap.put(Config.KEY_Email,Email);
 
                 RequestHandler rh = new RequestHandler();
 
-                String s = rh.sendPostRequest(Config.URL_UPDATE_EMP,hashMap);
+                String s = rh.sendPostRequest(Config.URL_UPDATE_ACCOUNT,hashMap);
 
                 return s;
             }
@@ -166,7 +168,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_DELETE_EMP, id);
+                String s = rh.sendGetRequestParam(Config.URL_DELETE_ACCOUNT, id);
                 return s;
             }
         }
@@ -211,4 +213,3 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
         }
     }
 }
- */

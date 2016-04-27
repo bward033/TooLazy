@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     //Adding an employee
-    private void addEmployee(){
+    private void addAccount(){
 
         final String First_Name = editTextFirst_Name.getText().toString().trim();
         final String Last_Name = editTextLast_Name.getText().toString().trim();
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String Phone_Number = editTextPhone_Number.getText().toString().trim();
         final String Email = editTextEmail.getText().toString().trim();
 
-        class AddEmployee extends AsyncTask<Void,Void,String>{
+        class AddAccount extends AsyncTask<Void,Void,String>{
 
             ProgressDialog loading;
 
@@ -89,18 +89,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        AddEmployee ae = new AddEmployee();
+        AddAccount ae = new AddAccount();
         ae.execute();
     }
 
     @Override
     public void onClick(View v) {
         if(v == buttonAdd){
-            addEmployee();
+            addAccount();
         }
 
-        //if(v == buttonView){
-          //  startActivity(new Intent(this,ViewAllTasks.class));
-        //}
+        if(v == buttonView){
+            startActivity(new Intent(this,ViewAllTasks.class));
+        }
     }
 }
