@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AddAccount ae = new AddAccount();
         ae.execute();
+
+
+
     }
 
 
@@ -117,14 +120,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == buttonAdd){
             addAccount();
+            startActivity(new Intent(this, MapsActivity.class));
         }
 
         if(v == buttonView){
             startActivity(new Intent(this, ViewAllTasks.class));
         }
-        if(v == Map){
-            startActivity(new Intent(this, MapsActivity.class));
-        }
+
 
     }
 
