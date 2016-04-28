@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:editable="true"
-        android:width="@dimen/"
         android:layout_weight="0.70" />
 
     <LinearLayout
