@@ -58,12 +58,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Account"
-        android:id="@+id/buttonAdd" />
+        android:id="@+id/buttonAdd"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Accounts"
-        android:id="@+id/buttonView" />
+        android:id="@+id/buttonView"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
 
 </LinearLayout>
