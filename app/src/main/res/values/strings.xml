@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TooLazy</string>
+<<<<<<< HEAD
     <string name="title_activity_maps">Map</string>
+=======
+    <string name="search">Search</string>
+>>>>>>> origin
 </resources>
