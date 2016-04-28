@@ -3,7 +3,6 @@
     <color name="colorPrimary">#0099cc</color>
     <color name="colorPrimary2">#A14BDC</color>
     <color name="colorPrimaryDark">#141514</color>
-    <color name="colorAccent">#dc8431</color>
     <color name="actionbar_background">#ac0e0e</color>
     <color name="colorButton">#ec2d2d</color>
 </resources>

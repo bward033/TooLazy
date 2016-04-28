@@ -57,8 +57,6 @@
             android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
 
-
-
     </LinearLayout>
 
 </LinearLayout>
