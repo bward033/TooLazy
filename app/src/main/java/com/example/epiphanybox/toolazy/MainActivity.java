@@ -26,6 +26,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button buttonAdd;
     private Button buttonView;
+    private Button Map;
+
+    private void init(){
+        Map = (Button)findViewById(R.id.Map);
+        Map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(MainActivity.this,MapsActivity.class);
+                startActivity(toy);
+            }
+        });
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
         buttonView = (Button) findViewById(R.id.buttonView);
-
+        Map = (Button)findViewById(R.id.Map);
         //Setting listeners to button
+
         buttonAdd.setOnClickListener(this);
         buttonView.setOnClickListener(this);
+
+        Map.setOnClickListener(this);
+
+        init();
     }
 
 
@@ -93,6 +111,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ae.execute();
     }
 
+
+
     @Override
     public void onClick(View v) {
         if(v == buttonAdd){
@@ -100,7 +120,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if(v == buttonView){
-            startActivity(new Intent(this,ViewAllTasks.class));
+            startActivity(new Intent(this, ViewAllTasks.class));
         }
+        if(v == Map){
+            startActivity(new Intent(this, MapsActivity.class));
+        }
+
     }
 }
