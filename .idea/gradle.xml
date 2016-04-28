@@ -6,9 +6,15 @@
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <option name="gradleHome" value="C:\Program Files\Android\Android Studio\gradle\gradle-2.10" />
 >>>>>>> master
+=======
+        <option name="gradleHome" value="C:\Program Files\Android\Android Studio\gradle\gradle-2.10" />
+=======
+>>>>>>> michelle
+>>>>>>> origin
         <option name="gradleJvm" value="1.7" />
         <option name="modules">
           <set>
