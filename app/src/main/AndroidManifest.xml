@@ -23,8 +23,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewAllTasks" />
-        <activity android:name=".ViewTask" />
+        <activity android:name=".ViewAllAccounts" />
+        <activity android:name=".ViewAccount" />
 
 
         <!--

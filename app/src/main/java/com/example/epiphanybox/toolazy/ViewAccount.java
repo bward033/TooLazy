@@ -36,7 +36,7 @@ public class ViewAccount extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_task);
+        setContentView(R.layout.activity_view_account);
 
         Intent intent = getIntent();
 
