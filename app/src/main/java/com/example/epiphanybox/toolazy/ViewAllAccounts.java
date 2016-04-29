@@ -10,14 +10,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemClickListener {
+public class ViewAllAccounts extends AppCompatActivity implements ListView.OnItemClickListener {
 
 
         private ListView listView;
@@ -37,7 +34,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_view_all_tasks);
+            setContentView(R.layout.activity_view_all_accounts);
             listView = (ListView) findViewById(R.id.listView);
             listView.setOnItemClickListener(this);
             getJSON();
@@ -72,7 +69,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
             }
 
             ListAdapter adapter = new SimpleAdapter(
-                    ViewAllTasks.this, list, R.layout.list_item,
+                    ViewAllAccounts.this, list, R.layout.list_item,
                     new String[]{Config.TAG_First_Name,Config.TAG_Last_Name},
                     new int[]{R.id.id});
 
@@ -86,7 +83,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
                 @Override
                 protected void onPreExecute() {
                     super.onPreExecute();
-                    loading = ProgressDialog.show(ViewAllTasks.this,"Fetching Data","Wait...",false,false);
+                    loading = ProgressDialog.show(ViewAllAccounts.this,"Fetching Data","Wait...",false,false);
                 }
 
                 @Override
@@ -110,7 +107,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(this, ViewTask.class);
+            Intent intent = new Intent(this, ViewAccount.class);
             HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
             String Account_ID = map.get(Config.TAG_Account_ID).toString();
             intent.putExtra(Config.Account_ID,Account_ID);

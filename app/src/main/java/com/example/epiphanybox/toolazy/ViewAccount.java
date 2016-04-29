@@ -10,8 +10,6 @@ import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +21,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class ViewTask extends AppCompatActivity implements View.OnClickListener {
+public class ViewAccount extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editTextFirst_Name;
     private EditText editTextLast_Name;
@@ -38,7 +36,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_task);
+        setContentView(R.layout.activity_view_account);
 
         Intent intent = getIntent();
 
@@ -66,7 +64,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ViewTask.this,"Fetching...","Wait...",false,false);
+                loading = ProgressDialog.show(ViewAccount.this,"Fetching...","Wait...",false,false);
             }
 
             @Override
@@ -118,14 +116,14 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ViewTask.this,"Updating...","Wait...",false,false);
+                loading = ProgressDialog.show(ViewAccount.this,"Updating...","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ViewTask.this,s,Toast.LENGTH_LONG).show();
+                Toast.makeText(ViewAccount.this,s,Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -155,14 +153,14 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ViewTask.this, "Updating...", "Wait...", false, false);
+                loading = ProgressDialog.show(ViewAccount.this, "Updating...", "Wait...", false, false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ViewTask.this, s, Toast.LENGTH_LONG).show();
+                Toast.makeText(ViewAccount.this, s, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -186,7 +184,7 @@ public class ViewTask extends AppCompatActivity implements View.OnClickListener 
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteEmployee();
-                        startActivity(new Intent(ViewTask.this,ViewAllTasks.class));
+                        startActivity(new Intent(ViewAccount.this,ViewAllAccounts.class));
                     }
                 });
 

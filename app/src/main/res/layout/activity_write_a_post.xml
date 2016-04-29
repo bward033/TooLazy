@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:editable="true"
+
+
         android:layout_weight="0.70"
         android:background="@drawable/my_border"
         android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
