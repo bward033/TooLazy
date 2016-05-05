@@ -10,6 +10,7 @@ public class Config {
     public static final String URL_UPDATE_ACCOUNT="http://cs370group.com/updateAccounts.php";
     public static final String URL_DELETE_ACCOUNT="http://cs370group.com/deleteAccounts.php";
     public static final String URL_GET_ACCOUNT="http://cs370group.com/getAccount.php";
+    public static final String URL_GET_LOGIN="http://cs370group/account_check.php";
 
     //Keys that will be used to send the request to php scripts
     public static final String KEY_First_Name = "First_Name";
@@ -17,15 +18,18 @@ public class Config {
     public static final String KEY_Birth_date = "Birth_date";
     public static final String KEY_Phone_Number = "Phone_Number";
     public static final String KEY_Email = "Email";
+    public static final String KEY_Password = "Password";
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
-    public static final String TAG_Account_ID = "account_ID";
+    public static final String TAG_SUCCESS = "success";
+    public static final String TAG_Account_ID = ("account_id");
     public static final String TAG_First_Name = "First_Name";
     public static final String TAG_Last_Name = "Last_Name";
     public static final String TAG_Email = "Email";
+    public static final String TAG_Password = "Password";
     public static final String TAG_Phone_Number = "Phone_Number";
 
     //employee id to pass with intent
-    public static final String Account_ID = "Account_ID";
+    public static final String Account_ID = "Email";
 }
 

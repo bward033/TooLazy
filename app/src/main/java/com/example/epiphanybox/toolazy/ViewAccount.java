@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ViewAccount extends AppCompatActivity implements View.OnClickListener {
@@ -53,7 +54,6 @@ public class ViewAccount extends AppCompatActivity implements View.OnClickListen
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
 
-        editTextFirst_Name.setText(id);
 
         getTask();
     }
@@ -166,7 +166,7 @@ public class ViewAccount extends AppCompatActivity implements View.OnClickListen
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_DELETE_ACCOUNT, id);
+                String s = rh.sendGetRequestParam(Config.URL_DELETE_ACCOUNT, String.valueOf(id));
                 return s;
             }
         }
