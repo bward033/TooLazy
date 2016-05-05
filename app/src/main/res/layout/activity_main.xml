@@ -5,62 +5,79 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Name" />
+        android:text="First Name"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextFirst_Name" />
+        android:id="@+id/editTextFirst_Name"
+
+      />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last Name" />
+        android:text="Last Name"
+       />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextLast_Name" />
+        android:id="@+id/editTextLast_Name"
+
+       />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Birth Date" />
+        android:text="Birth Date"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextBirth_date" />
+        android:id="@+id/editTextBirth_date"
+
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone Number" />
+        android:text="Phone Number"
+
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextPhone_Number" />
+        android:id="@+id/editTextPhone_Number"
+
+    />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:text="Email"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextEmail" />
+        android:id="@+id/editTextEmail"
+
+        android:layout_weight="0.08" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Account"
         android:id="@+id/buttonAdd"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/darkblue"
         android:textColor="@android:color/white"
         android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
 
@@ -69,7 +86,7 @@
         android:layout_height="wrap_content"
         android:text="View Accounts"
         android:id="@+id/buttonView"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@color/darkblue"
         android:textColor="@android:color/white"
         android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
 

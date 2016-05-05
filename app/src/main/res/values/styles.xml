@@ -13,6 +13,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary4</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
 
     </style>
 
