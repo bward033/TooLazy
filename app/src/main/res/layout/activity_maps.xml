@@ -1,10 +1,40 @@
+<LinearLayout
+
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width = "wrap_content"
+    android:layout_height = "wrap_content"/>
+
+
+    <EditText
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Address"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/button"
+        android:layout_gravity="right"
+    android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"/>
+
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools ="http://schemas.android.com/tools"
     android:id="@+id/Map"
     tools:context=".MapsActivity"
     android:name="com.google.android.gms.maps.SupportMapFragment"
-    tools:layout="@layout/abc_activity_chooser_view_list_item"/>
+    tools:layout="@layout/abc_activity_chooser_view_list_item"
+    android:layout_height="473dp"
+    android:layout_width="384dp" />
 
 
+
+</LinearLayout>

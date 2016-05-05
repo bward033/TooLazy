@@ -19,16 +19,17 @@ public class StartUpPage extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_startup_page);
 
 
-
-        button2 = (Button)findViewById(R.id.button2);
+        button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
 
 
     }
 
+
     @Override
     public void onClick(View v) {
         if (v == button2) {
+
             startActivity(new Intent(this, MainActivity.class));
         }
     }
