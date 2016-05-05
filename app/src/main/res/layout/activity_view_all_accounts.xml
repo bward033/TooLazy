@@ -13,31 +13,13 @@ xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ViewAllAccounts">
 
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:id="@+id/linearLayout2">
-
-        <EditText
-            android:layout_width="292dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText2" />
-
-        <SearchView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/searchView3" />
-    </LinearLayout>
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/myFAB"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@mipmap/ic_action_add"
         app:elevation="5dp"
-        app:backgroundTint="@android:color/black"
+        app:backgroundTint="@android:color/holo_red_dark"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -50,6 +32,23 @@ xmlns:tools="http://schemas.android.com/tools"
         app:rippleColor="@android:color/holo_red_dark"
         />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/search"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/ic_search"
+        app:elevation="5dp"
+        app:backgroundTint="@android:color/holo_red_dark"
+        android:layout_alignParentBottom="true"
+
+        android:onClick="addNewNoteFunction"
+        android:layout_marginBottom="5dp"
+        app:borderWidth="0dp"
+
+        android:background="@drawable/fab"
+        app:rippleColor="@android:color/holo_red_dark"
+        android:layout_alignParentStart="true" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="361dp"
@@ -57,7 +56,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout2" />
+        android:layout_alignParentTop="true" />
 
 
     </RelativeLayout>
