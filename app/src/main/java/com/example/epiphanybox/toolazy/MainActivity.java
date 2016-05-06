@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail;
 
     private Button buttonAdd;
-    private Button buttonView;
 
 
 
@@ -39,12 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
-        buttonView = (Button) findViewById(R.id.buttonView);
+
 
         //Setting listeners to button
 
         buttonAdd.setOnClickListener(this);
-        buttonView.setOnClickListener(this);
+
 
     }
 
@@ -104,10 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v == buttonAdd){
             addAccount();
             startActivity(new Intent(this, MapsActivity.class));
-        }
-
-        if(v == buttonView){
-            startActivity(new Intent(this, ViewAllAccounts.class));
         }
 
 

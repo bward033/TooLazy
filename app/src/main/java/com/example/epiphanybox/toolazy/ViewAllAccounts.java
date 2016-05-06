@@ -109,7 +109,7 @@ public class ViewAllAccounts extends AppCompatActivity implements ListView.OnIte
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Intent intent = new Intent(this, ViewAccount.class);
             HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-            String Account_ID = map.get(Config.TAG_Account_ID).toString();
+            String Account_ID = map.get(Config.TAG_Account_ID);
             intent.putExtra(Config.Account_ID,Account_ID);
             startActivity(intent);
         }
