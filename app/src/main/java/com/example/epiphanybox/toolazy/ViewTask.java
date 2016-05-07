@@ -22,12 +22,13 @@ package com.example.epiphanybox.toolazy;
 
     public class ViewTask extends AppCompatActivity {
 
+        private EditText editTextID;
         private EditText editTextTitle;
         private EditText editTextDescription;
         private EditText editTextPrice;
         private EditText editTextCategory;
 
-        private String id;
+        private String task_id;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,9 @@ package com.example.epiphanybox.toolazy;
             setContentView(R.layout.view_task);
 
             Intent intent = getIntent();
+            task_id = intent.getStringExtra(Config.Task_ID);
 
-            id = intent.getStringExtra(Config.TAG_TITLE_ID);
-
+            editTextID = (EditText) findViewById(R.id.editTextID);
             editTextTitle = (EditText) findViewById(R.id.editTextTitle);
             editTextDescription = (EditText) findViewById(R.id.editTextDescription);
             editTextPrice = (EditText) findViewById(R.id.editTextPrice);
@@ -45,13 +46,13 @@ package com.example.epiphanybox.toolazy;
 
 
 
-            editTextTitle.setText(id);
+            editTextID.setText(task_id);
 
             getTask();
         }
 
         private void getTask(){
-            class GetEmployee extends AsyncTask<Void,Void,String> {
+            class GetTask extends AsyncTask<Void,Void,String> {
                 ProgressDialog loading;
                 @Override
                 protected void onPreExecute() {
@@ -69,28 +70,28 @@ package com.example.epiphanybox.toolazy;
                 @Override
                 protected String doInBackground(Void... params) {
                     RequestHandler rh = new RequestHandler();
-                    String s = rh.sendGetRequestParam(Config.URL_GET_TASK,id);
-                    return s;
+                    return rh.sendGetRequestParam(Config.URL_GET_TASK,task_id);
                 }
             }
-            GetEmployee ge = new GetEmployee();
+            GetTask ge = new GetTask();
             ge.execute();
         }
 
         private void showEmployee(String json){
+
             try {
                 JSONObject jsonObject = new JSONObject(json);
                 JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
                 JSONObject c = result.getJSONObject(0);
-                String First_Name = c.getString(Config.TAG_TITLE);
-                String Last_Name = c.getString(Config.TAG_DESCRIPTION);
-                String Phone_Number = c.getString(Config.TAG_PRICE);
-                String Email = c.getString(Config.TAG_CATOGORY);
+                String Title = c.getString(Config.TAG_TITLE);
+                String Description = c.getString(Config.TAG_DESCRIPTION);
+                String Price = c.getString(Config.TAG_PRICE);
+                String Category = c.getString(Config.TAG_CATOGORY);
 
-                editTextTitle.setText(First_Name);
-                editTextDescription.setText(Last_Name);
-                editTextPrice.setText(Phone_Number);
-                editTextCategory.setText(Email);
+                editTextTitle.setText(Title);
+                editTextDescription.setText(Description);
+                editTextPrice.setText(Price);
+                editTextCategory.setText(Category);
 
             } catch (JSONException e) {
                 e.printStackTrace();
