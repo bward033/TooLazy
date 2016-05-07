@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextBirth_date;
     private EditText editTextPhone_Number;
     private EditText editTextEmail;
+    private EditText editTextPassword;
 
     private Button buttonAdd;
 
@@ -36,12 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextBirth_date = (EditText) findViewById(R.id.editTextBirth_date);
         editTextPhone_Number = (EditText) findViewById(R.id.editTextPhone_Number);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
         buttonAdd = (Button) findViewById(R.id.buttonAdd);
 
 
         //Setting listeners to button
 
+        assert buttonAdd != null;
         buttonAdd.setOnClickListener(this);
 
 
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String Birth_date = editTextBirth_date.getText().toString().trim();
         final String Phone_Number = editTextPhone_Number.getText().toString().trim();
         final String Email = editTextEmail.getText().toString().trim();
+        final String Password = editTextPassword.getText().toString().trim();
 
         class AddAccount extends AsyncTask<Void,Void,String>{
 
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params.put(Config.KEY_Birth_date,Birth_date);
                 params.put(Config.KEY_Phone_Number,Phone_Number);
                 params.put(Config.KEY_Email,Email);
+                params.put(Config.KEY_PASSWORD,Password);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(Config.URL_ADD, params);
@@ -102,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == buttonAdd){
             addAccount();
-            startActivity(new Intent(this, MapsActivity.class));
+            startActivity(new Intent(this,ViewAllTasks.class));
         }
 
 

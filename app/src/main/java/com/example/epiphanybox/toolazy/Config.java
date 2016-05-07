@@ -25,10 +25,11 @@ public class Config {
     public static final String KEY_PRICE = "price";
     public static final String KEY_TITLE = "title";
     public static final String KEY_ZIP = "zip";
+    public static final String KEY_PASSWORD = "Password";
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_Account_ID = "account_ID";
-    public static final String TAG_TITLE_ID = "task_id";
+    public static final String TAG_Task_ID = "task_id";
     public static final String TAG_First_Name = "First_Name";
     public static final String TAG_Last_Name = "Last_Name";
     public static final String TAG_Email = "Email";
@@ -38,10 +39,11 @@ public class Config {
     public static final String TAG_PRICE = "price";
     public static final String TAG_TITLE = "title";
     public static final String TAG_ZIP = "zip";
+    public static final String TAG_PASSWORD = "Password";
 
 
     //employee id to pass with intent
-    public static final String Account_ID = "Account_ID";
-    public static final String Title_ID = "task_id";
+    public static final String Account_ID = "account_ID";
+    public static final String Task_ID = "task_id";
 }
 

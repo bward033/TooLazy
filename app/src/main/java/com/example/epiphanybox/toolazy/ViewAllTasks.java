@@ -10,11 +10,14 @@ import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,11 +49,23 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
                     }
                 }
         });
+        final FloatingActionButton myMap = (FloatingActionButton) findViewById(R.id.search);
+        assert myMap  != null;
+        myMap.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(v == myMap){
+                    startmap();
+                }
+            }
+        });
         getJSON();
     }
 
     private void startAct() {
         startActivity(new Intent(this, AddTask.class));
+    }
+    private void startmap(){
+        startActivity(new Intent(this, MapsActivity.class));
     }
 
 
@@ -63,17 +78,13 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
+                String task_ID = jo.getString(Config.TAG_Task_ID);
                 String Title = jo.getString(Config.TAG_TITLE);
-                String Description = jo.getString(Config.TAG_DESCRIPTION);
-                String Price = jo.getString(Config.TAG_PRICE);
-                String Category = jo.getString(Config.TAG_CATOGORY);
 
 
                 HashMap<String,String> employees = new HashMap<>();
+                employees.put(Config.TAG_Task_ID,task_ID);
                 employees.put(Config.TAG_TITLE,Title);
-                employees.put(Config.TAG_DESCRIPTION,Description);
-                employees.put(Config.TAG_PRICE,Price);
-                employees.put(Config.KEY_CATOGORY,Category);
                 list.add(employees);
             }
 
@@ -83,8 +94,8 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
         ListAdapter adapter = new SimpleAdapter(
                 ViewAllTasks.this, list, R.layout.list_item,
-                new String[]{Config.TAG_TITLE,Config.KEY_DESCRIPTION,Config.TAG_PRICE,Config.TAG_CATOGORY},
-                new int[]{R.id.id});
+                new String[]{Config.TAG_Task_ID,Config.TAG_TITLE},
+                new int[]{R.id.task_ID,R.id.Title});
 
         listView.setAdapter(adapter);
     }
@@ -122,9 +133,9 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ViewTask.class);
-        HashMap map =(HashMap)parent.getItemAtPosition(position);
-        String Account_ID = (String) map.get(Config.TAG_TITLE_ID);
-        intent.putExtra(Config.Title_ID,Account_ID);
+        HashMap <String,String> map =(HashMap)parent.getItemAtPosition(position);
+        String Task_ID = map.get(Config.TAG_Task_ID).toString();
+        intent.putExtra(Config.Task_ID,Task_ID);
         startActivity(intent);
     }
 }

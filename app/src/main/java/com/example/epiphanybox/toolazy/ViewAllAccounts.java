@@ -43,7 +43,7 @@ public class ViewAllAccounts extends AppCompatActivity implements ListView.OnIte
 
         private void showEmployee(){
             JSONObject jsonObject = null;
-            ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+            ArrayList<HashMap<String,String>> list = new ArrayList<>();
             try {
                 jsonObject = new JSONObject(JSON_STRING);
                 JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
@@ -71,7 +71,7 @@ public class ViewAllAccounts extends AppCompatActivity implements ListView.OnIte
             ListAdapter adapter = new SimpleAdapter(
                     ViewAllAccounts.this, list, R.layout.list_item,
                     new String[]{Config.TAG_First_Name,Config.TAG_Last_Name},
-                    new int[]{R.id.id});
+                    new int[]{R.id.title_ID});
 
             listView.setAdapter(adapter);
         }
