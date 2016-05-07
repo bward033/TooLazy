@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Write a post..."
+        android:text="Write a Task..."
         android:id="@+id/textView10"
         android:elegantTextHeight="false"
         android:textStyle="bold"
@@ -19,17 +19,60 @@
         android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:editable="true"
+        android:id="@+id/editTextTitle"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextDescription"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextPrice"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCategory"
+
+        />
 
 
-        android:layout_weight="0.70"
-        android:background="@drawable/my_border"
-        android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
+
 
     <LinearLayout
         android:orientation="horizontal"
