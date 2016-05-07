@@ -22,7 +22,6 @@ package com.example.epiphanybox.toolazy;
 
     public class ViewTask extends AppCompatActivity {
 
-        private EditText editTextID;
         private EditText editTextTitle;
         private EditText editTextDescription;
         private EditText editTextPrice;
@@ -38,14 +37,14 @@ package com.example.epiphanybox.toolazy;
             Intent intent = getIntent();
             task_id = intent.getStringExtra(Config.Task_ID);
 
-            editTextID = (EditText) findViewById(R.id.editTextID);
+            EditText editTextID = (EditText) findViewById(R.id.editTextID);
             editTextTitle = (EditText) findViewById(R.id.editTextTitle);
             editTextDescription = (EditText) findViewById(R.id.editTextDescription);
             editTextPrice = (EditText) findViewById(R.id.editTextPrice);
             editTextCategory = (EditText) findViewById(R.id.editTextCategory);
 
 
-
+            assert editTextID != null;
             editTextID.setText(task_id);
 
             getTask();
@@ -64,7 +63,7 @@ package com.example.epiphanybox.toolazy;
                 protected void onPostExecute(String s) {
                     super.onPostExecute(s);
                     loading.dismiss();
-                    showEmployee(s);
+                    showTask(s);
                 }
 
                 @Override
@@ -77,7 +76,7 @@ package com.example.epiphanybox.toolazy;
             ge.execute();
         }
 
-        private void showEmployee(String json){
+        private void showTask(String json){
 
             try {
                 JSONObject jsonObject = new JSONObject(json);
