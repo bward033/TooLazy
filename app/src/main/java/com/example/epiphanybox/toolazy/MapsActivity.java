@@ -1,4 +1,8 @@
 package com.example.epiphanybox.toolazy;
+
+import android.os.Bundle;
+
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -17,6 +21,13 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
+
+
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -25,36 +36,114 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.common.api.GoogleApiClient.Builder;
 import com.google.android.gms.plus.Plus;
+import com.google.android.gms.maps.GoogleMap;
 
 
-public class MapsActivity extends FragmentActivity {
+public class MapsActivity extends FragmentActivity implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleMap mMap;
 
 
+    private GoogleApiClient mGoogleApiClient;
+    public static final String TAG = MapsActivity.class.getSimpleName();
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+
+
+
+//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.Map);
+  //      mapFragment.getMapAsync(this);
 
     }
 
 
-   // @Override
+
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    //@Override
     public void onMapReady(GoogleMap googleMap) {
 
-        // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-       // mMap.setMyLocationEnabled(true);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap = googleMap;
+        //Add a marker in Sydney and move the camera
+       // LatLng sydney = new LatLng(-34, 151);
+       // mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+
+
+        try {
+            //mMap.addMarker(new MarkerOptions().position(new LatLng(0,0)).title("Marker"));
+            mMap.setMyLocationEnabled(true);
+
+
+
+        } catch(SecurityException e) {
+            Log.d("BOOM", e.getMessage());
+        }
+
+
+       // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        Log.i(TAG, "Location services connected.");
+        try {
+            Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        }
+        catch(SecurityException e){
+            Log.d("BOOM", e.getMessage());
+
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.i(TAG, "Location services suspended. Please reconnect.");
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setUpMapIfNeeded();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
+
+    private void handleNewLocation(Location location) {
+        Log.d(TAG, location.toString());
+    }
+
+
 }
-
-
-
 
 
 

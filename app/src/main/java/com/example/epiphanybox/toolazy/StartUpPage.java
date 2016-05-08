@@ -11,6 +11,7 @@ public class StartUpPage extends AppCompatActivity implements View.OnClickListen
 
 
     private Button button2;
+    private Button button3;
 
 
     @Override
@@ -21,6 +22,8 @@ public class StartUpPage extends AppCompatActivity implements View.OnClickListen
 
         button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
+        button3 = (Button)findViewById(R.id.button3);
+        button3.setOnClickListener(this);
 
 
     }
@@ -31,6 +34,9 @@ public class StartUpPage extends AppCompatActivity implements View.OnClickListen
         if (v == button2) {
 
             startActivity(new Intent(this, MainActivity.class));
+        }
+        if (v == button3) {
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 
