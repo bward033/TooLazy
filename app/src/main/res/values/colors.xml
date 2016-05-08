@@ -8,4 +8,5 @@
     <color name="colorPrimaryDark">#141514</color>
     <color name="actionbar_background">#ac0e0e</color>
     <color name="colorButton">#ec2d2d</color>
+    <color name="grey">#bdbdbd</color>
 </resources>
