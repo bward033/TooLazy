@@ -94,8 +94,8 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
         ListAdapter adapter = new SimpleAdapter(
                 ViewAllTasks.this, list, R.layout.list_item,
-                new String[]{Config.TAG_Task_ID,Config.TAG_TITLE},
-                new int[]{R.id.task_ID,R.id.Title});
+                new String[]{Config.TAG_TITLE,Config.TAG_CATOGORY},
+                new int[]{R.id.Title,R.id.catogory});
 
         listView.setAdapter(adapter);
     }
