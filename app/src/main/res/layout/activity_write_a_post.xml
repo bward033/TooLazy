@@ -93,7 +93,7 @@
             android:text="CANCEL"
             android:id="@+id/button4"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_blue_light"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:textColor="@android:color/white"
             android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
             android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
@@ -105,7 +105,7 @@
             android:text="PUBLISH"
             android:id="@+id/button5"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_blue_light"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:textColor="@android:color/white"
             android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 

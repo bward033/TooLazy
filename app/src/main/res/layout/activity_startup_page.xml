@@ -7,66 +7,17 @@
 
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="TooLazy"
-        android:typeface="serif"
-        android:textColor="@android:color/white"
-        android:textSize="64dp"
-        android:id="@+id/textView"
-        android:textStyle="bold"
-        android:elegantTextHeight="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="42dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
-
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/imageView2"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
-            android:src="@mipmap/ic_yardwork"
-            android:layout_marginTop="44dp"
-            android:layout_below="@+id/textView"
-            android:layout_toRightOf="@+id/imageView5"
-            android:layout_toEndOf="@+id/imageView5" />
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:id="@+id/imageView3"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
-            android:src="@mipmap/ic_cleaning"
-            android:layout_alignBottom="@+id/imageView5"
-            android:layout_toRightOf="@+id/imageView5"
-            android:layout_toEndOf="@+id/imageView5" />
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/imageView4"
-            android:layout_weight="0.19"
-            android:src="@mipmap/ic_groceries"
-            android:layout_alignTop="@+id/imageView5"
-            android:layout_toLeftOf="@+id/imageView5"
-            android:layout_toStartOf="@+id/imageView5" />
-
-        <ImageView
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:id="@+id/imageView5"
-            android:src="@mipmap/ic_tools"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
-            android:layout_alignTop="@+id/imageView2"
-            android:layout_centerHorizontal="true" />
+            android:layout_weight="2"
+            android:src="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
 
 
     <Button
@@ -74,7 +25,7 @@
         android:layout_height="67dp"
         android:text="Sign in"
         android:id="@+id/button3"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:textColor="@android:color/white"
         android:layout_above="@+id/button2"
         android:layout_alignParentLeft="true"
@@ -85,14 +36,14 @@
         android:layout_height="67dp"
         android:text="Sign up"
         android:id="@+id/button2"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Where you can have other people do it for you"
@@ -100,15 +51,11 @@
         android:id="@+id/textView2"
         android:textSize="25dp"
         android:layout_gravity="center"
-        android:layout_above="@+id/button3"
         android:focusable="false"
         android:gravity="center_vertical|center_horizontal"
         android:layout_below="@+id/imageView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp" />
+        android:layout_marginTop="46dp" />
 
 </RelativeLayout>
