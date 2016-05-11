@@ -12,20 +12,18 @@
         android:layout_height="wrap_content"
         android:text="Task ID" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:id="@+id/editTextID" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
-        android:id="@+id/Title"/>
+        android:text="Title" />
 
-
-
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextTitle" />
@@ -35,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Description" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextDescription" />
@@ -45,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Category" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextCategory" />
@@ -55,7 +53,7 @@
         android:layout_height="wrap_content"
         android:text="Price" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextPrice" />
