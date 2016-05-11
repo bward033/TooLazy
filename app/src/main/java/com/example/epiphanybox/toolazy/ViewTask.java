@@ -10,6 +10,7 @@ package com.example.epiphanybox.toolazy;
     import android.support.v7.app.AppCompatActivity;
     import android.os.Bundle;
     import android.view.View;
+    import android.view.ViewGroup;
     import android.widget.Button;
     import android.widget.EditText;
     import android.widget.TextView;
@@ -23,7 +24,7 @@ package com.example.epiphanybox.toolazy;
 
     import java.util.HashMap;
 
-    public class ViewTask extends AppCompatActivity {
+    public class ViewTask extends AppCompatActivity implements View.OnClickListener{
 
         private TextView TextViewID;
         private TextView TextViewTitle;
@@ -33,6 +34,8 @@ package com.example.epiphanybox.toolazy;
 
         private String task_id;
         public String tid;
+        private Button button4;
+        private Button button5;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,17 @@ package com.example.epiphanybox.toolazy;
 
 
             TextViewID.setText(task_id);
+            button4 = (Button) findViewById(R.id.button4);
+            button5 = (Button) findViewById(R.id.button5);
+
+
+            //Setting listeners to button
+
+            assert button4 != null;
+            button4.setOnClickListener(this);
+            assert button5 !=null;
+            button5.setOnClickListener(this);
+
 
             getTask();
         }
@@ -101,6 +115,15 @@ package com.example.epiphanybox.toolazy;
 
             } catch (JSONException e) {
                 e.printStackTrace();
+            }
+        }
+        @Override
+        public void onClick(View v) {
+            if (v == button4) {
+                startActivity(new Intent(this, ViewAllTasks.class));
+            }
+            if (v == button5) {
+                startActivity(new Intent(this, AcceptTask.class));
             }
         }
 
