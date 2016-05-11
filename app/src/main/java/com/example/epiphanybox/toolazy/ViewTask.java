@@ -88,7 +88,8 @@ package com.example.epiphanybox.toolazy;
                 String Description = c.getString(Config.TAG_DESCRIPTION);
                 String Price = c.getString(Config.TAG_PRICE);
                 String Category = c.getString(Config.TAG_CATOGORY);
-
+                //void System.out.println(String Category);
+              //  String.ValueOf(Category);
                 TextViewTitle.setText(Title);
                 TextViewDescription.setText(Description);
                 TextViewPrice.setText(Price);
