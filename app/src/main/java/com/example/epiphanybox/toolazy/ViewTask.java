@@ -90,7 +90,7 @@ package com.example.epiphanybox.toolazy;
                     RequestHandler rh = new RequestHandler();
                     tid = task_id;
                     int id = Integer.parseInt(tid);
-                    return rh.sendGetRequestParam(Config.URL_GET_TASK,id);
+                    return rh.sendGetRequestParam(Config.URL_GET_TASK,task_id);
                 }
             }
             GetTask ge = new GetTask();
