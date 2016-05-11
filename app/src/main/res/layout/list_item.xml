@@ -36,6 +36,9 @@
             android:textStyle="bold"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="20dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
 
             />
 
@@ -43,8 +46,9 @@
             android:id="@+id/catogory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_alignBottom=""
+            android:textSize="15dp"
+            android:layout_marginTop="30dp"
+
             android:textColor="@android:color/black"
             android:layout_marginLeft="12dp"
             android:layout_gravity="center"/>
