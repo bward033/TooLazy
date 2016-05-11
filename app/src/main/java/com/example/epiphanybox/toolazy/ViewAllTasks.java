@@ -10,14 +10,11 @@ import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +27,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
     private ListView listView;
 
-    private String JSON_STRING;
+    public String JSON_STRING;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +75,12 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
-                String task_ID = jo.getString(Config.TAG_Task_ID);
+                String task_id = jo.getString(Config.TAG_Task_ID);
                 String Title = jo.getString(Config.TAG_TITLE);
 
 
                 HashMap<String,String> employees = new HashMap<>();
-                employees.put(Config.TAG_Task_ID,task_ID);
+                employees.put(Config.TAG_Task_ID,task_id);
                 employees.put(Config.TAG_TITLE,Title);
                 list.add(employees);
             }
@@ -95,7 +92,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
         ListAdapter adapter = new SimpleAdapter(
                 ViewAllTasks.this, list, R.layout.list_item,
                 new String[]{Config.TAG_Task_ID,Config.TAG_TITLE},
-                new int[]{R.id.task_ID,R.id.Title});
+                new int[]{R.id.task_id,R.id.Title});
 
         listView.setAdapter(adapter);
     }
@@ -133,7 +130,7 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ViewTask.class);
-        HashMap <String,String> map =(HashMap)parent.getItemAtPosition(position);
+        HashMap map =(HashMap)parent.getItemAtPosition(position);
         String Task_ID = map.get(Config.TAG_Task_ID).toString();
         intent.putExtra(Config.Task_ID,Task_ID);
         startActivity(intent);

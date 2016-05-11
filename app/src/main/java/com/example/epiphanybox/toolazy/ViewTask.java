@@ -12,7 +12,10 @@ package com.example.epiphanybox.toolazy;
     import android.view.View;
     import android.widget.Button;
     import android.widget.EditText;
+    import android.widget.TextView;
     import android.widget.Toast;
+
+    import com.google.android.gms.common.server.converter.StringToIntConverter;
 
     import org.json.JSONArray;
     import org.json.JSONException;
@@ -22,12 +25,14 @@ package com.example.epiphanybox.toolazy;
 
     public class ViewTask extends AppCompatActivity {
 
-        private EditText editTextTitle;
-        private EditText editTextDescription;
-        private EditText editTextPrice;
-        private EditText editTextCategory;
+        private TextView TextViewID;
+        private TextView TextViewTitle;
+        private TextView TextViewDescription;
+        private TextView TextViewPrice;
+        private TextView TextViewCategory;
 
         private String task_id;
+        public String tid;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +42,15 @@ package com.example.epiphanybox.toolazy;
             Intent intent = getIntent();
             task_id = intent.getStringExtra(Config.Task_ID);
 
-            EditText editTextID = (EditText) findViewById(R.id.editTextID);
-            editTextTitle = (EditText) findViewById(R.id.editTextTitle);
-            editTextDescription = (EditText) findViewById(R.id.editTextDescription);
-            editTextPrice = (EditText) findViewById(R.id.editTextPrice);
-            editTextCategory = (EditText) findViewById(R.id.editTextCategory);
+            TextViewID = (TextView) findViewById(R.id.TextViewID);
+            TextViewTitle = (TextView) findViewById(R.id.TextViewTitle);
+            TextViewDescription = (TextView) findViewById(R.id.TextViewDescription);
+            TextViewPrice = (TextView) findViewById(R.id.TextViewPrice);
+            TextViewCategory = (TextView) findViewById(R.id.TextViewCategory);
 
 
-            assert editTextID != null;
-            editTextID.setText(task_id);
+
+            TextViewID.setText(task_id);
 
             getTask();
         }
@@ -69,7 +74,9 @@ package com.example.epiphanybox.toolazy;
                 @Override
                 protected String doInBackground(Void... params) {
                     RequestHandler rh = new RequestHandler();
-                    return rh.sendGetRequestParam(Config.URL_GET_TASK,task_id);
+                    tid = task_id;
+                    int id = Integer.parseInt(tid);
+                    return rh.sendGetRequestParam(Config.URL_GET_TASK,id);
                 }
             }
             GetTask ge = new GetTask();
@@ -87,10 +94,10 @@ package com.example.epiphanybox.toolazy;
                 String Price = c.getString(Config.TAG_PRICE);
                 String Category = c.getString(Config.TAG_CATOGORY);
 
-                editTextTitle.setText(Title);
-                editTextDescription.setText(Description);
-                editTextPrice.setText(Price);
-                editTextCategory.setText(Category);
+                TextViewTitle.setText(Title);
+                TextViewDescription.setText(Description);
+                TextViewPrice.setText(Price);
+                TextViewCategory.setText(Category);
 
             } catch (JSONException e) {
                 e.printStackTrace();
