@@ -11,67 +11,73 @@
         android:id="@+id/textView10"
         android:elegantTextHeight="false"
         android:textStyle="bold"
-        android:typeface="normal"
-        android:theme="@style/AppTheme2"
+        android:typeface="serif"
+        android:textColor="@android:color/white"
         android:textIsSelectable="false"
         style="@style/Base.TextAppearance.AppCompat.Display1"
         android:layout_marginTop="@dimen/abc_action_bar_content_inset_material"
-        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_weight="0.21"
+        android:layout_gravity="center_vertical" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextTitle"
 
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description"
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextDescription"
 
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextPrice"
 
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Category"
 
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextCategory"
 
-        />
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
-        android:layout_weight="0.08" />
+
 
 
     <LinearLayout
@@ -87,7 +93,7 @@
             android:text="CANCEL"
             android:id="@+id/button4"
             android:layout_weight="1"
-            android:background="@android:color/holo_purple"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:textColor="@android:color/white"
             android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
             android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
@@ -99,7 +105,7 @@
             android:text="PUBLISH"
             android:id="@+id/button5"
             android:layout_weight="1"
-            android:background="@android:color/holo_purple"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:textColor="@android:color/white"
             android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 

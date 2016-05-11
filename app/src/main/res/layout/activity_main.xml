@@ -88,9 +88,10 @@
         android:layout_height="wrap_content"
         android:text="Add Account"
         android:id="@+id/buttonAdd"
-        android:background="@color/darkblue"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:textColor="@android:color/white"
-        android:layout_margin="@dimen/abc_action_bar_content_inset_material" />
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.21" />
 
 
 

@@ -80,11 +80,13 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
                 JSONObject jo = result.getJSONObject(i);
                 String task_ID = jo.getString(Config.TAG_Task_ID);
                 String Title = jo.getString(Config.TAG_TITLE);
+                String Catogory = jo.getString(Config.TAG_CATOGORY);
 
 
                 HashMap<String,String> employees = new HashMap<>();
                 employees.put(Config.TAG_Task_ID,task_ID);
                 employees.put(Config.TAG_TITLE,Title);
+                employees.put(Config.TAG_CATOGORY,Catogory);
                 list.add(employees);
             }
 
@@ -94,8 +96,8 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
 
         ListAdapter adapter = new SimpleAdapter(
                 ViewAllTasks.this, list, R.layout.list_item,
-                new String[]{Config.TAG_Task_ID,Config.TAG_TITLE},
-                new int[]{R.id.task_ID,R.id.Title});
+                new String[]{Config.TAG_TITLE,Config.TAG_CATOGORY},
+                new int[]{R.id.Title,R.id.catogory});
 
         listView.setAdapter(adapter);
     }

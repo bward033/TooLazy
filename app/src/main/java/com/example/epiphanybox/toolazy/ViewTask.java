@@ -12,6 +12,7 @@ package com.example.epiphanybox.toolazy;
     import android.view.View;
     import android.widget.Button;
     import android.widget.EditText;
+    import android.widget.TextView;
     import android.widget.Toast;
 
     import org.json.JSONArray;
@@ -22,10 +23,11 @@ package com.example.epiphanybox.toolazy;
 
     public class ViewTask extends AppCompatActivity {
 
-        private EditText editTextTitle;
-        private EditText editTextDescription;
-        private EditText editTextPrice;
-        private EditText editTextCategory;
+        private TextView TextViewID;
+        private TextView TextViewTitle;
+        private TextView TextViewDescription;
+        private TextView TextViewPrice;
+        private TextView TextViewCategory;
 
         private String task_id;
 
@@ -37,15 +39,15 @@ package com.example.epiphanybox.toolazy;
             Intent intent = getIntent();
             task_id = intent.getStringExtra(Config.Task_ID);
 
-            EditText editTextID = (EditText) findViewById(R.id.editTextID);
-            editTextTitle = (EditText) findViewById(R.id.editTextTitle);
-            editTextDescription = (EditText) findViewById(R.id.editTextDescription);
-            editTextPrice = (EditText) findViewById(R.id.editTextPrice);
-            editTextCategory = (EditText) findViewById(R.id.editTextCategory);
+            TextViewID = (TextView) findViewById(R.id.ViewTextID);
+            TextViewTitle = (TextView) findViewById(R.id.ViewTextTitle);
+            TextViewDescription = (TextView) findViewById(R.id.ViewTextDescription);
+            TextViewPrice = (TextView) findViewById(R.id.ViewTextPrice);
+            TextViewCategory = (TextView) findViewById(R.id.ViewTextCategory);
 
 
-            assert editTextID != null;
-            editTextID.setText(task_id);
+            assert TextViewID != null;
+            TextViewID.setText(task_id);
 
             getTask();
         }
@@ -86,11 +88,12 @@ package com.example.epiphanybox.toolazy;
                 String Description = c.getString(Config.TAG_DESCRIPTION);
                 String Price = c.getString(Config.TAG_PRICE);
                 String Category = c.getString(Config.TAG_CATOGORY);
-
-                editTextTitle.setText(Title);
-                editTextDescription.setText(Description);
-                editTextPrice.setText(Price);
-                editTextCategory.setText(Category);
+                //void System.out.println(String Category);
+              //  String.ValueOf(Category);
+                TextViewTitle.setText(Title);
+                TextViewDescription.setText(Description);
+                TextViewPrice.setText(Price);
+                TextViewCategory.setText(Category);
 
             } catch (JSONException e) {
                 e.printStackTrace();
