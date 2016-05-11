@@ -11,6 +11,7 @@ package com.example.epiphanybox.toolazy;
     import android.os.Bundle;
     import android.view.View;
     import android.view.ViewGroup;
+    import android.widget.AdapterView;
     import android.widget.Button;
     import android.widget.EditText;
     import android.widget.TextView;
@@ -24,7 +25,7 @@ package com.example.epiphanybox.toolazy;
 
     import java.util.HashMap;
 
-    public class ViewTask extends AppCompatActivity implements View.OnClickListener{
+    public class ViewTask extends AppCompatActivity implements View.OnClickListener {
 
         private TextView TextViewID;
         private TextView TextViewTitle;
@@ -33,7 +34,6 @@ package com.example.epiphanybox.toolazy;
         private TextView TextViewCategory;
 
         private String task_id;
-        public String tid;
         private Button button4;
         private Button button5;
 
@@ -52,7 +52,6 @@ package com.example.epiphanybox.toolazy;
             TextViewCategory = (TextView) findViewById(R.id.TextViewCategory);
 
 
-
             TextViewID.setText(task_id);
             button4 = (Button) findViewById(R.id.button4);
             button5 = (Button) findViewById(R.id.button5);
@@ -62,20 +61,21 @@ package com.example.epiphanybox.toolazy;
 
             assert button4 != null;
             button4.setOnClickListener(this);
-            assert button5 !=null;
+            assert button5 != null;
             button5.setOnClickListener(this);
 
 
             getTask();
         }
 
-        private void getTask(){
-            class GetTask extends AsyncTask<Void,Void,String> {
+        private void getTask() {
+            class GetTask extends AsyncTask<Void, Void, String> {
                 ProgressDialog loading;
+
                 @Override
                 protected void onPreExecute() {
                     super.onPreExecute();
-                    loading = ProgressDialog.show(ViewTask.this,"Fetching...","Wait...",false,false);
+                    loading = ProgressDialog.show(ViewTask.this, "Fetching...", "Wait...", false, false);
                 }
 
                 @Override
@@ -88,16 +88,14 @@ package com.example.epiphanybox.toolazy;
                 @Override
                 protected String doInBackground(Void... params) {
                     RequestHandler rh = new RequestHandler();
-                    tid = task_id;
-                    int id = Integer.parseInt(tid);
-                    return rh.sendGetRequestParam(Config.URL_GET_TASK,task_id);
+                    return rh.sendGetRequestParam(Config.URL_GET_TASK, task_id);
                 }
             }
             GetTask ge = new GetTask();
             ge.execute();
         }
 
-        private void showTask(String json){
+        private void showTask(String json) {
 
             try {
                 JSONObject jsonObject = new JSONObject(json);
@@ -117,17 +115,45 @@ package com.example.epiphanybox.toolazy;
                 e.printStackTrace();
             }
         }
+
+
         @Override
         public void onClick(View v) {
-            if (v == button4) {
+            if(button4 == v){
                 startActivity(new Intent(this, ViewAllTasks.class));
             }
-            if (v == button5) {
-                startActivity(new Intent(this, AcceptTask.class));
+            if(button5 == v){
+                updatetask();
             }
+
         }
 
+        private void updatetask() {
+            class GetTask extends AsyncTask<Void, Void, String> {
+                ProgressDialog loading;
 
-    }
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    loading = ProgressDialog.show(ViewTask.this, "Fetching...", "Wait...", false, false);
+                }
 
+                @Override
+                protected void onPostExecute(String s) {
+                    super.onPostExecute(s);
+                    loading.dismiss();
+                    showTask(s);
+                }
+
+                @Override
+                protected String doInBackground(Void... params) {
+                    RequestHandler rh = new RequestHandler();
+                    return rh.sendGetRequestParam(Config.URL_ACCEPT_TASK, task_id);
+                }
+            }
+            GetTask ge = new GetTask();
+            ge.execute();
+        }
+
+        }
 
