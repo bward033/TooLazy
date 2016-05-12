@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewTextID" />
+        android:id="@+id/TextViewID" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewTextTitle" />
+        android:id="@+id/TextViewTitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewTextDescription" />
+        android:id="@+id/TextViewDescription" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewTextCategory" />
+        android:id="@+id/TextViewCategory" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ViewTextPrice" />
+        android:id="@+id/TextViewPrice" />
 
     <LinearLayout
         android:orientation="horizontal"

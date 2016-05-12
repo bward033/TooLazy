@@ -37,7 +37,6 @@ public class AcceptTask  extends AppCompatActivity {
         Intent intent = getIntent();
         task_id = intent.getStringExtra(Config.Task_ID);
 
-        TextViewID = (TextView) findViewById(R.id.TextViewID);
         TextViewTitle = (TextView) findViewById(R.id.TextViewTitle);
         TextViewCity = (TextView) findViewById(R.id.TextViewCity);
         TextViewPrice = (TextView) findViewById(R.id.TextViewPrice);
