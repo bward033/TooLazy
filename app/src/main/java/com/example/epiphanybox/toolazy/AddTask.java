@@ -21,6 +21,7 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener{
     private EditText editTextDescription;
     private EditText editTextPrice;
     private EditText editTextCategory;
+    private EditText editTextAddress;
 
     private Button button4;
     private Button button5;
@@ -37,6 +38,8 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener{
         editTextDescription = (EditText) findViewById(R.id.editTextDescription);
         editTextPrice = (EditText) findViewById(R.id.editTextPrice);
         editTextCategory = (EditText) findViewById(R.id.editTextCategory);
+        editTextAddress = (EditText) findViewById(R.id.editTextAddress);
+
 
         button4 = (Button) findViewById(R.id.button4);
         button5 = (Button) findViewById(R.id.button5);
@@ -55,6 +58,7 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener{
         final String Description = editTextDescription.getText().toString().trim();
         final String Price = editTextPrice.getText().toString().trim();
         final String Category = editTextCategory.getText().toString().trim();
+        final String Address = editTextAddress.getText().toString().trim();
 
 
         class AddAccount extends AsyncTask<Void,Void,String> {
@@ -81,6 +85,8 @@ public class AddTask extends AppCompatActivity implements View.OnClickListener{
                 params.put(Config.KEY_DESCRIPTION,Description);
                 params.put(Config.KEY_PRICE,Price);
                 params.put(Config.KEY_CATOGORY,Category);
+                params.put(Config.KEY_ADDRESS,Address);
+
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(Config.URL_ADD_TASKS, params);

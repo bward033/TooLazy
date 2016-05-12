@@ -42,6 +42,7 @@
         android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
         android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
 
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +50,23 @@
 
         android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
         android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextAddress"
+
+        android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+        android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
+
 
     <TextView
         android:layout_width="wrap_content"

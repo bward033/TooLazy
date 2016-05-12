@@ -57,6 +57,38 @@
         android:layout_height="wrap_content"
         android:id="@+id/ViewTextPrice" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0">
+
+        <Button
+            android:layout_width="@dimen/abc_action_bar_content_inset_material"
+            android:layout_height="fill_parent"
+            android:text="CANCEL"
+            android:id="@+id/button4"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="@dimen/abc_action_bar_content_inset_material"
+            android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/abc_action_bar_content_inset_material"
+            android:layout_height="fill_parent"
+            android:text="Accept"
+            android:id="@+id/button5"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="@dimen/abc_action_bar_content_inset_material" />
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>
