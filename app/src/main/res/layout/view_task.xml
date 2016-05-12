@@ -56,6 +56,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/TextViewPrice" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextViewStatus" />
 
     <LinearLayout
         android:orientation="horizontal"

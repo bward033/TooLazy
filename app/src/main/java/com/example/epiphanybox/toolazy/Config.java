@@ -17,6 +17,7 @@ public class Config {
     public static final String URL_GET_TASK="http://cs370group.com/gettask.php/?task_id=";
     public static final String URL_GET_MAP_ADDRESS="http://cs370group.com/pulladdress.php/?city=";
     public static final String URL_ACCEPT_TASK="http://cs370group.com/accepttask.php/?task_id=";
+    public static final String URL_LOGIN="http://cs370group.com/account_check.php";
 
     //Keys that will be used to send the request to php scripts
     public static final String KEY_First_Name = "First_Name";
@@ -32,6 +33,7 @@ public class Config {
     public static final String KEY_PASSWORD = "Password";
     public static final String KEY_ADDRESS = "address";
     public static final String KEY_CITY = "city";
+    public static final String KEY_STATUS = "status";
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_Account_ID = "account_ID";
@@ -48,6 +50,7 @@ public class Config {
     public static final String TAG_PASSWORD = "Password";
     public static final String TAG_ADDRESS = "address";
     public static final String TAG_CITY = "city";
+    public static final String TAG_STATUS = "status";
 
 
     //employee id to pass with intent

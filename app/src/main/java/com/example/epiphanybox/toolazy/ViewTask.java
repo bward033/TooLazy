@@ -22,6 +22,7 @@ package com.example.epiphanybox.toolazy;
     import org.json.JSONArray;
     import org.json.JSONException;
     import org.json.JSONObject;
+    import org.w3c.dom.Text;
 
     import java.util.HashMap;
 
@@ -32,6 +33,7 @@ package com.example.epiphanybox.toolazy;
         private TextView TextViewDescription;
         private TextView TextViewPrice;
         private TextView TextViewCategory;
+        private TextView TextViewStatus;
 
         private String task_id;
         private Button button4;
@@ -50,6 +52,7 @@ package com.example.epiphanybox.toolazy;
             TextViewDescription = (TextView) findViewById(R.id.TextViewDescription);
             TextViewPrice = (TextView) findViewById(R.id.TextViewPrice);
             TextViewCategory = (TextView) findViewById(R.id.TextViewCategory);
+            TextViewStatus = (TextView) findViewById(R.id.TextViewStatus);
 
 
             TextViewID.setText(task_id);
@@ -105,11 +108,13 @@ package com.example.epiphanybox.toolazy;
                 String Description = c.getString(Config.TAG_DESCRIPTION);
                 String Price = c.getString(Config.TAG_PRICE);
                 String Category = c.getString(Config.TAG_CATOGORY);
+                String Status = c.getString(Config.TAG_STATUS);
 
                 TextViewTitle.setText(Title);
                 TextViewDescription.setText(Description);
                 TextViewPrice.setText(Price);
                 TextViewCategory.setText(Category);
+                TextViewStatus.setText(Status);
 
             } catch (JSONException e) {
                 e.printStackTrace();
