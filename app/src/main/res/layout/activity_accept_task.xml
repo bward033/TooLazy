@@ -11,12 +11,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title" />
+        android:text="Title"
+        android:textSize="60dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewTitle" />
+        android:id="@+id/TextViewTitle"
+        android:textSize="60dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +28,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewAddress" />
+        android:id="@+id/TextViewAddress"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +40,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewCity" />
+        android:id="@+id/TextViewCity"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,7 +52,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewZip" />
+        android:id="@+id/TextViewZip"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,7 +64,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/TextViewPrice" />
+        android:id="@+id/TextViewPrice"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
 
 
