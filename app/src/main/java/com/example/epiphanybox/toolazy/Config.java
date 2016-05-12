@@ -18,6 +18,7 @@ public class Config {
     public static final String URL_GET_MAP_ADDRESS="http://cs370group.com/pulladdress.php/?city=";
     public static final String URL_ACCEPT_TASK="http://cs370group.com/accepttask.php/?task_id=";
 
+
     //Keys that will be used to send the request to php scripts
     public static final String KEY_First_Name = "First_Name";
     public static final String KEY_Last_Name = "Last_Name";
@@ -48,6 +49,7 @@ public class Config {
     public static final String TAG_PASSWORD = "Password";
     public static final String TAG_ADDRESS = "address";
     public static final String TAG_CITY = "city";
+    public static final String TAG_STATUS = "status";
 
 
     //employee id to pass with intent
