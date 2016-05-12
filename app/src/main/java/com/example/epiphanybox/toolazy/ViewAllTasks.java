@@ -83,10 +83,12 @@ public class ViewAllTasks extends AppCompatActivity implements ListView.OnItemCl
                 String Catogory = jo.getString(Config.TAG_CATOGORY);
 
 
+
                 HashMap<String,String> employees = new HashMap<>();
                 employees.put(Config.TAG_Task_ID,task_ID);
                 employees.put(Config.TAG_TITLE,Title);
                 employees.put(Config.TAG_CATOGORY,Catogory);
+
                 list.add(employees);
             }
 
