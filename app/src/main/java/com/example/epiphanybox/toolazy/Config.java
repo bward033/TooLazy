@@ -1,7 +1,5 @@
 package com.example.epiphanybox.toolazy;
 
-import android.database.sqlite.SQLiteDatabase;
-
 /**
  * Created by EpiphanyBox on 4/19/16.
  */
@@ -48,6 +46,7 @@ public class Config {
     public static final String TAG_PASSWORD = "Password";
     public static final String TAG_ADDRESS = "address";
     public static final String TAG_CITY = "city";
+    public static final String TAG_STATUS = "status";
 
 
     //employee id to pass with intent
